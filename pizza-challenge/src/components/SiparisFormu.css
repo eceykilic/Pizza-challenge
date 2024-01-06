@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;600;800&display=swap');
+
+.main {
+    width: 100%;
+    color: #292929;
+}
+
+a.nav-link {
+    color: white;
+}
+
+.header {
+    background-color: #ce2829;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 0.5rem;
+  }
+
+.container {
+    color:white;
+    margin: 0 auto;
+    text-align: left;
+    display:block;
+    font-family: 'Barlow', sans-serif;
+}
+
+.navKismi {
+    text-decoration: none;
+    color:white;
+    justify-content: center;
+    display: flex;
+    margin-right: 26.5rem;
+    margin-top: 2rem;
+    font-weight: 300;
+    
+}
+
+  .siparis-body {
+    margin: 0 auto;
+    text-align: left;
+    color: black;
+    width: 600px;
+    padding-top: 9rem;
+    position:sticky;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 400;
+    
+  }
+
+  .secenek {
+    font-size: large;
+    font-family: 'Barlow', sans-serif;
+    display: flex;
+    margin: -20px;
+    font-weight: 600;
+    padding: 1rem;
+    margin-right: 1rem;
+}
+
+p.secenekBasligi {
+    font-size: large;
+    font-family: 'Barlow', sans-serif;
+    display: flex;
+    margin: 0 -25px;
+    font-weight: 600;
+}
+  
+
+.boyutlar {
+    display: flex;
+    align-items: center;
+}
+
+.boyutSecContainer {
+    margin-top: 2rem;
+}
+
+.boyutVeHamur {
+    width: 100%;
+}
+
+.ekstra {
+    margin-top: 2rem;
+}
+
+.ekMalzeme {
+    float: left;
+    font-size:15px;
+}
+.ekMalzemeBaslik {
+    float: left;
+    font-size:18px;
+    font-weight: 600;
+    font-family: 'Barlow', sans-serif;
+}
+
+.form-check-inline {
+    display: flex;
+    
+}
+
+.ekMalzemeContainer {
+    margin-left: 2%;
+}
+
+.kabak {
+    margin-left: -104px;
+    font-weight: 500;
+}
+
+.sebzeler {
+    margin-left: 0.5rem;
+    font-weight: 500;
+}
+
+.griYazi {
+    color: #292929;
+}
+
+.acikGri {
+    color: #5F5F5F;
+}
+
+h2 {
+    font-weight: 800;
+    padding-top: 1rem;
+}
+
+/*
+ <div className="fiyatVePuan">
+        <h4 style={{ fontWeight: "bold" }}>85,50 ₺</h4>
+        <p className="puan">4.9</p>
+        <p className="yorumSayisi">(200)</p>
+      </div
+
+      */
+
+.fiyatVePuan {
+    display: flex;
+}
+
+.puan {
+    margin-left: 22rem;
+}
+
+.yorumSayisi {
+    margin-left: 5rem;
+}
+
+.ustMenu {
+    padding: 2px;
+    margin: 0;
+}
+
+.siparisNotu {
+    padding-top: 6rem;
+    font-family: 'Barlow', sans-serif;
+    font-size:18px;
+    font-weight: 600;
+}
+
+.siparisBaslik {
+    display: flex;
+    margin-right: 32rem;
+    font-weight: 600;
+    font-family: 'Barlow', sans-serif;
+}
+
+.cizgi {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.minus-button,
+.plus-button {
+    width: 2.5rem;
+    border: 0.5px solid #ccc;
+    background-color: #fdc913;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.adet-kutusu {
+    border: 0.5px solid #ccc;
+    width: 3rem;
+    height: 3rem;
+    display: inline-block;
+}
+  
+.adet-bolumu {
+    text-align: center;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+  
+.adet-ve-siparis {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.artiEksi {
+    display: flex;
+    margin-bottom: 5rem;
+}
+
+.adet-sayisi {
+    padding-top: 0.5rem;
+}
+
+.siparis-bolumu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-weight: bold;
+    font-family: "Barlow", sans-serif;
+    width: 350px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: 8rem;
+}
+  
+.siparis-bolumu > div:first-child {
+    padding-left: 20px;
+    padding-top: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: left;
+}
+  
+.siparis-bolumu > div:nth-child(2) {
+    padding-left: 20px;
+    padding-right: 20px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+  
+.siparis-bolumu > div:nth-child(3) {
+    padding-left: 20px;
+    padding-right: 20px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+  
+.secimler {
+    display: flex;
+    justify-content: space-between;
+}
+
+.altKisim {
+    display: flex;
+    justify-content: space-between;
+}
+
+#order-button {
+    width: 113.5%;
+    background-color: #fdc913;
+    border: none;
+    outline: none;
+    padding: 10px;
+    font-weight: bold;
+    font-family: "Barlow", sans-serif;
+    cursor: pointer;
+    margin-left: -1.3rem;
+    margin-right: 3rem;
+
+}
