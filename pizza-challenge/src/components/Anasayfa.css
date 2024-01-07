@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;600;800&display=swap');
+
+body {
+    margin:0 auto;
+    display:flex;
+    place-items: center;
+    width: 100%;
+}
+
+.arkaplan {
+    background-image: url(/mvp-banner.png);
+    width: 1920px;
+    height: 1080px;
+    padding-top: 2rem;
+} 
+
+.aciktim {
+    border-radius: 20px;
+    padding: 10px 55px;
+    background-color: #fdc913;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 600;
+    color: black;
+    text-decoration: none;
+}
+
+.yazi {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+}
+
+.baslik {
+    font-size: 45px;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 900;
+    color: white;
+}
+
+.slogan {
+    font-family: 'Barlow', sans-serif;
+    color: white;
+    font-size: 58px;
+    font-weight: 100;
+}
+
+.buttonCont {
+    display: flex;
+    justify-content: center;
+}

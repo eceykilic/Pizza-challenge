@@ -1,0 +1,247 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;600;800&display=swap");
+ 
+
+div {
+    width: 100%;
+}
+
+a.nav-link {
+  color: white;
+}
+
+.header {
+  background-color: #ce2829;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  flex-direction: column;
+}
+
+.icerik {
+    width: 600px;
+}
+
+.teknolojik {
+    font-size: 40px;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    color: white;
+
+}
+
+.navKismi {
+  text-decoration: none;
+  color: white;
+  justify-content: center;
+  display: flex;
+  font-weight: 300;
+  padding-right: 24rem;
+}
+
+.siparis-body {
+  text-align: left;
+  color: black;
+  font-family: "Barlow", sans-serif;
+  font-weight: 400;
+}
+
+.secenek {
+  font-size: large;
+  font-family: "Barlow", sans-serif;
+  display: flex;
+  margin: -20px;
+  font-weight: 600;
+  padding: 1rem;
+  margin-right: 1rem;
+}
+
+p.secenekBasligi {
+  font-size: large;
+  font-family: "Barlow", sans-serif;
+  display: flex;
+  margin: 0 -25px;
+  font-weight: 600;
+}
+
+.boyutlar {
+  display: flex;
+  align-items: center;
+}
+
+.boyutSecContainer {
+  margin-top: 2rem;
+}
+
+.boyutVeHamur {
+  width: 100%;
+}
+
+.ekstra {
+  margin-top: 2rem;
+}
+
+.ekMalzeme {
+  float: left;
+  font-size: 15px;
+}
+.ekMalzemeBaslik {
+  float: left;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: "Barlow", sans-serif;
+}
+
+.form-check-inline {
+  display: flex;
+}
+
+.ekMalzemeContainer {
+  margin-left: 2%;
+}
+
+.kabak {
+  margin-left: -104px;
+  font-weight: 500;
+}
+
+.sebzeler {
+  margin-left: 0.5rem;
+  font-weight: 500;
+}
+
+.griYazi {
+  color: #292929;
+}
+
+.acikGri {
+  color: #5f5f5f;
+}
+
+h2 {
+  font-weight: 800;
+}
+
+/*
+ <div className="fiyatVePuan">
+        <h4 style={{ fontWeight: "bold" }}>85,50 ₺</h4>
+        <p className="puan">4.9</p>
+        <p className="yorumSayisi">(200)</p>
+      </div
+
+      */
+
+.fiyatVePuan {
+  display: flex;
+}
+
+.puan {
+  margin-left: 22rem;
+}
+
+.yorumSayisi {
+  margin-left: 5rem;
+}
+
+
+.siparisNotu {
+  padding-top: 6rem;
+  font-family: "Barlow", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.siparisBaslik {
+  display: flex;
+  margin-right: 32rem;
+  font-weight: 600;
+  font-family: "Barlow", sans-serif;
+}
+
+.cizgi {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.minus-button,
+.plus-button {
+  width: 2.5rem;
+  border: 0.5px solid #ccc;
+  background-color: #fdc913;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.adet-kutusu {
+  border: 0.5px solid #ccc;
+  width: 3rem;
+  height: 3rem;
+  display: inline-block;
+}
+
+.adet-bolumu {
+  text-align: center;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.adet-ve-siparis {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.artiEksi {
+  display: flex;
+  margin-bottom: 5rem;
+  width: 10rem;
+  margin-right: 30rem;
+}
+
+.adet-sayisi {
+  padding-top: 0.5rem;
+}
+
+
+.siparis-bolumu {
+    border: 1px solid #ccc;
+    font-weight: bold;
+    font-family: "Barlow", sans-serif;
+    padding: 0 50px;
+    margin-left: 19rem;
+}
+
+
+.siparis-bolumu > div:nth-child(2),
+.siparis-bolumu > div:nth-child(3) {
+  margin: 10px 0;
+}
+
+
+.secimler {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.altKisim {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+}
+
+#order-button {
+  width: 280%;
+  background-color: #fdc913;
+  border: none;
+  outline: none;
+  padding: 10px;
+  font-weight: bold;
+  font-family: "Barlow", sans-serif;
+  cursor: pointer;
+  margin-left: -3.25rem;
+  margin-right: 3rem;
+}
