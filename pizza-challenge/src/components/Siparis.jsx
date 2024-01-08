@@ -29,6 +29,7 @@ function Siparis() {
     Biber: 5,
     Ananas: 5,
     Kabak: 5,
+    Sucuk2: 5,
   };
   
 
@@ -385,8 +386,8 @@ function Siparis() {
                   <Input
                     type="checkbox"
                     onChange={handleToppingsChange}
-                    value="Sucuk"
-                    checked={toppings.includes("Sucuk")}
+                    value="Sucuk2"
+                    checked={toppings.includes("Sucuk2")}
                   />
                   <Label check className="sebzeler">
                     Sucuk
