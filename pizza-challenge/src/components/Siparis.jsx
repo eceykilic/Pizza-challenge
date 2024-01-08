@@ -469,10 +469,10 @@ function Siparis() {
             </div>
           </div>
 
-          <div className="siparis-bolumu genis">
+          <div className="siparis-bolumu">
             
-              <FormGroup>
-                <Label>Sipariş Toplamı</Label>
+              <FormGroup >
+                <Label className="secimler">Sipariş Toplamı</Label>
               </FormGroup>
               <FormGroup className="secimler">
                 <span>Seçimler:</span> <span>{secimler} ₺</span>

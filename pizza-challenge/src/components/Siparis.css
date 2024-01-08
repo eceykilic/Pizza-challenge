@@ -1,20 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;600;800&display=swap");
  
 
-div {
-    width: 100%;
-}
 
 a.nav-link {
   color: white;
 }
 
-.header {
+div.header {
   background-color: #ce2829;
   display: flex;
   justify-content: center;
   align-items: center; 
   flex-direction: column;
+  width: 1900px;
 }
 
 .icerik {
@@ -203,15 +201,16 @@ h2 {
 
 .adet-sayisi {
   padding-top: 0.5rem;
+  padding-left: 1.2rem;
 }
 
 
 .siparis-bolumu {
     border: 1px solid #ccc;
-    font-weight: bold;
+    font-weight: 600;
     font-family: "Barlow", sans-serif;
-    padding: 0 50px;
-    margin-left: 19rem;
+    padding: 0 100px;
+    margin-left: 7rem;
 }
 
 
@@ -223,25 +222,23 @@ h2 {
 
 .secimler {
   display: flex;
-  justify-content: space-between;
-  flex: 1;
+  gap: 4rem;
+  padding-top: 1rem;
+  float: left;
 }
 
 .altKisim {
   display: flex;
-  justify-content: space-between;
-  flex: 1;
 }
 
 #order-button {
-  width: 280%;
+  width: 225%;
   background-color: #fdc913;
   border: none;
   outline: none;
-  padding: 10px;
+  padding: 12px;
   font-weight: bold;
   font-family: "Barlow", sans-serif;
   cursor: pointer;
-  margin-left: -3.25rem;
-  margin-right: 3rem;
+  margin-left: -6.3rem;
 }
