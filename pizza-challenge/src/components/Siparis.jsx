@@ -1,27 +1,10 @@
 import { Form, FormGroup, Label, Input, Button, Col } from "reactstrap";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { Nav, NavItem, NavLink } from "reactstrap";
 import "./Siparis.css";
 import axios from "axios";
-
-
-const toppingsPrices = {
-  Pepperoni: 5,
-  Sosis: 5,
-  KanadaJambonu: 5,
-  TavukIzgara: 5,
-  Soğan: 5,
-  Domates: 5,
-  Mısır: 5,
-  Sucuk: 5,
-  Jalepeno: 5,
-  Sarımsak: 5,
-  Biber: 5,
-  Ananas: 5,
-  Kabak: 5,
-};
 
 function Siparis() {
   const [size, setSize] = useState("");
@@ -32,6 +15,22 @@ function Siparis() {
   const [total, setTotal] = useState(85.5);
   const [secimler, setSecimler] = useState(0.0);
   const [errorMessage, setErrorMessage] = useState("");
+  const toppingsPrices = {
+    Pepperoni: 5,
+    Sosis: 5,
+    KanadaJambonu: 5,
+    TavukIzgara: 5,
+    Soğan: 5,
+    Domates: 5,
+    Mısır: 5,
+    Sucuk: 5,
+    Jalepeno: 5,
+    Sarımsak: 5,
+    Biber: 5,
+    Ananas: 5,
+    Kabak: 5,
+  };
+  
 
   const navigate = useNavigate();
 
@@ -94,33 +93,28 @@ function Siparis() {
 
     setToppings((currentToppings) => {
       const updatedToppings = isChecked
-        ? [...currentToppings, toppingName] // topping seçildiyse, listeye ekle
-        : currentToppings.filter((topping) => topping !== toppingName); // topping iptal edildiyse, listeden çıkar
+        ? [...currentToppings, toppingName]
+        : currentToppings.filter((topping) => topping !== toppingName);
 
-      // Toppings state'inin güncellenmiş hali üzerinden toplam fiyatı güncelle
-      setSecimler(updatedToppings.length * adet * 5);
-      setTotal(calculateTotalPrice(adet));
+      // Ek malzemelerin toplam fiyatını hesaplayan fonksiyon
+      const updatedTotal = calculateTotalPrice(adet, updatedToppings);
+      setTotal(updatedTotal);
 
-      return updatedToppings; // Güncellenmiş toppings listesini döndür
+      return updatedToppings;
     });
   };
 
-  const handleAdetChange = (newAdet) => {
-    setAdet(newAdet);
 
-    // toplam fiyatı güncelle
-    setSecimler(toppings.length * newAdet * 5);
-    setTotal(calculateTotalPrice(newAdet));
-  };
+  useEffect(() => {
+    setSecimler(toppings.length * adet * 5);
+    setTotal(calculateTotalPrice(adet, toppings));
+  }, [toppings, adet]);
 
-  const calculateTotalPrice = (newAdet) => {
-    const basePrice = 85.5;
-    const toppingsPrice = toppings.reduce(
-      (total, topping) => total + toppingsPrices[topping],
-      0
-    );
-    const totalPrice = (basePrice + toppingsPrice) * newAdet;
-    return totalPrice;
+  const calculateTotalPrice = (newAdet, updatedToppings) => {
+    const anaFiyat = 85.5;
+    const ekMalzemeFiyati = (updatedToppings?.length || 0) * 5;
+    const toplamFiyat = (anaFiyat + ekMalzemeFiyati) * newAdet;
+    return toplamFiyat;
   };
 
   const handleSpecialChange = (event) => {
@@ -258,19 +252,34 @@ function Siparis() {
               <div className="row">
               
                 <FormGroup check inline name="toppings" className="col">
-                  <Input type="checkbox" onChange={handleToppingsChange} />
+                  <Input
+                    type="checkbox"
+                    onChange={handleToppingsChange}
+                    value="Pepperoni"
+                    checked={toppings.includes("Pepperoni")}
+                  />
                   <Label check className="sebzeler">
                     Pepperoni
                   </Label>
                 </FormGroup>
                 <FormGroup check inline name="toppings" className="col">
-                  <Input type="checkbox" onChange={handleToppingsChange} />
+                  <Input
+                    type="checkbox"
+                    onChange={handleToppingsChange}
+                    value="Sosis"
+                    checked={toppings.includes("Sosis")}
+                  />
                   <Label check className="sebzeler">
                     Sosis
                   </Label>
                 </FormGroup>
                 <FormGroup check inline name="toppings" className="col">
-                  <Input type="checkbox" onChange={handleToppingsChange} />
+                  <Input
+                    type="checkbox"
+                    onChange={handleToppingsChange}
+                    value="KanadaJambonu"
+                    checked={toppings.includes("Kanada Jambonu")}
+                  />
                   <Label check className="sebzeler">
                     Kanada Jambonu
                   </Label>
@@ -279,7 +288,12 @@ function Siparis() {
               <br />
               <div className="row">
                 <FormGroup check inline name="toppings" className="col">
-                  <Input type="checkbox" onChange={handleToppingsChange} />
+                  <Input
+                    type="checkbox"
+                    onChange={handleToppingsChange}
+                    value="TavukIzgara"
+                    checked={toppings.includes("Tavuk Izgara")}
+                  />
                   <Label check className="sebzeler">
                     Tavuk Izgara
                   </Label>
@@ -288,14 +302,20 @@ function Siparis() {
                   <Input
                     type="checkbox"
                     onChange={handleToppingsChange}
-                    value={5}
+                    value="Soğan"
+                    checked={toppings.includes("Soğan")}
                   />
                   <Label check className="sebzeler">
                     Soğan
                   </Label>
                 </FormGroup>
                 <FormGroup check inline name="toppings" className="col">
-                  <Input type="checkbox" onChange={handleToppingsChange} />
+                  <Input
+                    type="checkbox"
+                    onChange={handleToppingsChange}
+                    value="Domates"
+                    checked={toppings.includes("Domates")}
+                  />
                   <Label check className="sebzeler">
                     Domates
                   </Label>
@@ -304,19 +324,34 @@ function Siparis() {
               <br />
               <div className="row">
                 <FormGroup check inline name="toppings" className="col">
-                  <Input type="checkbox" onChange={handleToppingsChange} />
+                  <Input
+                    type="checkbox"
+                    onChange={handleToppingsChange}
+                    value="Mısır"
+                    checked={toppings.includes("Mısır")}
+                  />
                   <Label check className="sebzeler">
                     Mısır
                   </Label>
                 </FormGroup>
                 <FormGroup check inline name="toppings" className="col">
-                  <Input type="checkbox" onChange={handleToppingsChange} />
+                  <Input
+                    type="checkbox"
+                    onChange={handleToppingsChange}
+                    value="Sucuk"
+                    checked={toppings.includes("Sucuk")}
+                  />
                   <Label check className="sebzeler">
                     Sucuk
                   </Label>
                 </FormGroup>
                 <FormGroup check inline name="toppings" className="col">
-                  <Input type="checkbox" onChange={handleToppingsChange} />
+                  <Input
+                    type="checkbox"
+                    onChange={handleToppingsChange}
+                    value="Jalepeno"
+                    checked={toppings.includes("Jalepeno")}
+                  />
                   <Label check className="sebzeler">
                     Jalepeno
                   </Label>
@@ -325,19 +360,34 @@ function Siparis() {
               <br />
               <div className="row">
                 <FormGroup check inline name="toppings" className="col">
-                  <Input type="checkbox" onChange={handleToppingsChange} />
+                  <Input
+                    type="checkbox"
+                    onChange={handleToppingsChange}
+                    value="Sarımsak"
+                    checked={toppings.includes("Sarımsak")}
+                  />
                   <Label check className="sebzeler">
                     Sarımsak
                   </Label>
                 </FormGroup>
                 <FormGroup check inline name="toppings" className="col">
-                  <Input type="checkbox" onChange={handleToppingsChange} />
+                  <Input
+                    type="checkbox"
+                    onChange={handleToppingsChange}
+                    value="Biber"
+                    checked={toppings.includes("Biber")}
+                  />
                   <Label check className="sebzeler">
                     Biber
                   </Label>
                 </FormGroup>
                 <FormGroup check inline name="toppings" className="col">
-                  <Input type="checkbox" onChange={handleToppingsChange} />
+                  <Input
+                    type="checkbox"
+                    onChange={handleToppingsChange}
+                    value="Sucuk"
+                    checked={toppings.includes("Sucuk")}
+                  />
                   <Label check className="sebzeler">
                     Sucuk
                   </Label>
@@ -346,14 +396,24 @@ function Siparis() {
               <br />
               <div className="row">
                 <FormGroup check inline name="toppings" className="col">
-                  <Input type="checkbox" onChange={handleToppingsChange} />
+                  <Input
+                    type="checkbox"
+                    onChange={handleToppingsChange}
+                    value="Ananas"
+                    checked={toppings.includes("Ananas")}
+                  />
                   <Label check className="sebzeler">
                     Ananas
                   </Label>
                 </FormGroup>
                 <FormGroup check inline name="toppings" className="col">
                   <div className="kabak">
-                    <Input type="checkbox" onChange={handleToppingsChange} />
+                    <Input
+                    type="checkbox"
+                    onChange={handleToppingsChange}
+                    value="Kabak"
+                    checked={toppings.includes("Kabak")}
+                  />
                     <Label check>Kabak</Label>
                   </div>
                 </FormGroup>
@@ -386,7 +446,7 @@ function Siparis() {
               type="button"
               onClick={() => {
                 if (adet > 1) {
-                  handleAdetChange(adet - 1);
+                  setAdet(adet - 1);
                 }
               }}
             >
@@ -401,7 +461,7 @@ function Siparis() {
               <Button
                 className="plus-button"
                 type="button"
-                onClick={() => handleAdetChange(adet + 1)}
+                onClick={() => setAdet(adet + 1)}
               >
                 +
               </Button>
